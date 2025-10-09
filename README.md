@@ -40,7 +40,7 @@ The following video has instructions on local development using Git and GitHub:
 To illustrate the development process, we've also made a demo video to show how the GitHub flow looks like on an example:
 - [Mastering GitHub Workflow](https://youtu.be/PbTdROv0TJw) - Has chapters and closed-captions
 
-Here are the instructions on how to Collaborate for Project 3 which are similar to what was covered in the Introduction to GitHub video. You may skip reading these if you have watched that video:
+Here are the instructions on how to Collaborate for project 2 which are similar to what was covered in the Introduction to GitHub video. You may skip reading these if you have watched that video:
 
 ### Step 1: Create Your Project Repository
 
@@ -69,7 +69,7 @@ More information about [collaborators](https://docs.github.com/en/repositories/m
 
 ### Step 4: Development
 
-During the development of your software, you will have to perform several tasks. In project 3a, you agreed on how you will distribute these tasks. GitHub has several features that can help you keep track of these, so please make sure to use them.
+During the development of your software, you will have to perform several tasks. In project 2a, you agreed on how you will distribute these tasks. GitHub has several features that can help you keep track of these, so please make sure to use them.
 
 #### Issues:
 
