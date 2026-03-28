@@ -132,3 +132,32 @@ void Menu::selectNodes() {
     destNode  = d;
     std::cout << "[Info] Start: " << startNode << "  Destination: " << destNode << "\n";
 }
+
+void Menu_real::displayPath(const PathResult& result, const std::string& algorithmName) {
+    printSeparator();
+    std::cout << "Algorithm: " << algorithmName << "\n";
+    printSeparator();
+
+    if (!result.found) {
+        std::cout << "[Result] No path found between the selected nodes.\n";
+        return;
+    }
+
+    std::cout << std::fixed << std::setprecision(4);
+    std::cout << "Total Distance  : " << result.totalDistance  << " km\n";
+    std::cout << "Execution Time  : " << result.executionTimeMs << " ms\n";
+    std::cout << "Nodes Visited   : " << result.visitedNodes   << "\n";
+    std::cout << "Path Length     : " << result.path.size()    << " nodes\n";
+
+
+    std::cout << "Path            : ";
+    size_t showLimit = std::min(result.path.size(), (size_t)20);
+    for (size_t i = 0; i < showLimit; i++) {
+        if (i > 0) std::cout << " -> ";
+        std::cout << result.path[i];
+    }
+    if (result.path.size() > showLimit) {
+        std::cout << " ... (" << result.path.size() - showLimit << " more nodes)";
+    }
+    std::cout << "\n";
+}

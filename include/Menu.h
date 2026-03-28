@@ -23,7 +23,7 @@ private:
     void compareAlgorithms();
     void displayPath(const PathResult& result, const std::string& algorithmName);
     void printHeader() const;
-    void printSeparator() const;
+    void printSeparator() const
 };
 
 #endif
