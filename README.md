@@ -5,7 +5,7 @@
 <p>
 A C++ program that compares Dijkstra's and A* algorithms on large road network graphs, showing which finds the shortest path faster.
   
-To run:
+To run:<br>
 make<br>
 ./pathfinder<br>
 Then follow the menu:<br>
