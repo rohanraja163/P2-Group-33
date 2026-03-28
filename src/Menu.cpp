@@ -161,3 +161,23 @@ void Menu_real::displayPath(const PathResult& result, const std::string& algorit
     }
     std::cout << "\n";
 }
+
+void Menu_real::runDijkstra() {
+    if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
+    if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
+
+    std::cout << "\nRunning Dijkstra's Algorithm...\n";
+    Dijkstra dijk;
+    PathResult result = dijk.shortestPath(graph, startNode, destNode);
+    displayPath(result, "Dijkstra's Algorithm");
+}
+
+void Menu_real::runAStar() {
+    if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
+    if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
+
+    std::cout << "\nRunning A* Algorithm...\n";
+    AStar_real astar;
+    PathResult result = astar.shortestPath(graph, startNode, destNode);
+    displayPath(result, "A* Algorithm");
+}
