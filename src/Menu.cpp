@@ -130,7 +130,7 @@ void Menu::selectNodes() {
     std::cout << "[Info] Start: " << startNode << "  Destination: " << destNode << "\n";
 }
 
-void Menu_real::displayPath(const PathResult& result, const std::string& algorithmName) {
+void Menu::displayPath(const PathResult& result, const std::string& algorithmName) {
     printSeparator();
     std::cout << "Algorithm: " << algorithmName << "\n";
     printSeparator();
@@ -159,7 +159,7 @@ void Menu_real::displayPath(const PathResult& result, const std::string& algorit
     std::cout << "\n";
 }
 
-void Menu_real::runDijkstra() {
+void Menu::runDijkstra() {
     if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
     if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
 
@@ -169,7 +169,7 @@ void Menu_real::runDijkstra() {
     displayPath(result, "Dijkstra's Algorithm");
 }
 
-void Menu_real::runAStar() {
+void Menu::runAStar() {
     if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
     if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
 
@@ -179,7 +179,7 @@ void Menu_real::runAStar() {
     displayPath(result, "A* Algorithm");
 }
 
-void Menu_real::compareAlgorithms() {
+void Menu::compareAlgorithms() {
     if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
     if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
 
