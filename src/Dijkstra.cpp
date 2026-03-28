@@ -1,6 +1,4 @@
-//
-// Created by adits on 3/28/2026.
-//
+
 
 #include "Dijkstra.h"
 #include <queue>
@@ -10,6 +8,20 @@
 
 PathResult Dijkstra::shortestPath(const Graph& g, long long src, long long dst) {
     PathResult result;
-    result.found         = false;
+    result.found = false;
     result.totalDistance = std::numeric_limits<double>::infinity();
-    result.visitedNodes  = 0;
+    result.visitedNodes = 0;
+
+    if (!g.hasNode(src) || !g.hasNode(dst)) {
+        return result;
+    }
+
+
+    std::unordered_map<long long, double> dist;
+
+    std::unordered_map<long long, long long> prev;
+
+    for (const auto& kv : g.nodes) {
+        dist[kv.first] = std::numeric_limits<double>::infinity();
+    }
+    dist[src] = 0.0;
