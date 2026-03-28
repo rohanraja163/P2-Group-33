@@ -3,6 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="338f94e2-0a86-4d5b-8a93-677575055ee4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774731997568</updated>
-      <workItem from="1774731999301" duration="3053000" />
-      <workItem from="1774738732064" duration="42000" />
+      <workItem from="1774731999301" duration="3744000" />
     </task>
     <servers />
   </component>

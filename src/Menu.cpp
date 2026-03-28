@@ -159,6 +159,16 @@ void Menu_real::displayPath(const PathResult& result, const std::string& algorit
     std::cout << "\n";
 }
 
+void Menu_real::runDijkstra() {
+    if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
+    if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
+
+    std::cout << "\nRunning Dijkstra's Algorithm...\n";
+    Dijkstra dijk;
+    PathResult result = dijk.shortestPath(graph, startNode, destNode);
+    displayPath(result, "Dijkstra's Algorithm");
+}
+
 void Menu_real::runAStar() {
     if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
     if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
@@ -167,4 +177,61 @@ void Menu_real::runAStar() {
     AStar_real astar;
     PathResult result = astar.shortestPath(graph, startNode, destNode);
     displayPath(result, "A* Algorithm");
+}
+
+void Menu_real::compareAlgorithms() {
+    if (!datasetLoaded) { std::cout << "[Error] Load a dataset first.\n"; return; }
+    if (startNode < 0 || destNode < 0) { std::cout << "[Error] Select nodes first.\n"; return; }
+
+    std::cout << "\nRunning both algorithms for comparison...\n";
+
+    Dijkstra dijk;
+    AStar_real    astar;
+
+    std::cout << "  Running Dijkstra's...\n";
+    PathResult dijkResult = dijk.shortestPath(graph, startNode, destNode);
+    std::cout << "  Running A*...\n";
+    PathResult astarResult = astar.shortestPath(graph, startNode, destNode);
+
+    displayPath(dijkResult,  "Dijkstra's Algorithm");
+    displayPath(astarResult, "A* Algorithm");
+
+
+    printSeparator();
+    std::cout << "COMPARISON SUMMARY\n";
+    printSeparator();
+    std::cout << std::left
+              << std::setw(22) << "Metric"
+              << std::setw(18) << "Dijkstra"
+              << std::setw(18) << "A*"
+              << "\n";
+    std::cout << std::string(58, '-') << "\n";
+    std::cout << std::fixed << std::setprecision(4);
+    std::cout << std::setw(22) << "Distance (km)"
+              << std::setw(18) << dijkResult.totalDistance
+              << std::setw(18) << astarResult.totalDistance << "\n";
+    std::cout << std::setw(22) << "Execution Time (ms)"
+              << std::setw(18) << dijkResult.executionTimeMs
+              << std::setw(18) << astarResult.executionTimeMs << "\n";
+    std::cout << std::setw(22) << "Nodes Visited"
+              << std::setw(18) << dijkResult.visitedNodes
+              << std::setw(18) << astarResult.visitedNodes << "\n";
+    std::cout << std::setw(22) << "Path Length"
+              << std::setw(18) << dijkResult.path.size()
+              << std::setw(18) << astarResult.path.size() << "\n";
+    printSeparator();
+
+
+    if (dijkResult.found && astarResult.found) {
+        if (astarResult.executionTimeMs < dijkResult.executionTimeMs) {
+            double speedup = dijkResult.executionTimeMs / astarResult.executionTimeMs;
+            std::cout << "VERDICT: A* was faster by " << std::setprecision(2)
+                      << speedup << "x (visited "
+                      << dijkResult.visitedNodes - astarResult.visitedNodes
+                      << " fewer nodes).\n";
+        } else {
+            std::cout << "VERDICT: Dijkstra was faster or equivalent on this path.\n";
+        }
+    }
+    printSeparator();
 }
