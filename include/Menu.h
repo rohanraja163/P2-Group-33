@@ -3,9 +3,9 @@
 
 #include "Graph.h"
 #include "Dijkstra.h"
-#include "AStar_real.h"
+#include "AStar.h"
 
-class Menu_real {
+class Menu {
 public:
     void run();
 
@@ -16,6 +16,14 @@ private:
     bool datasetLoaded  = false;
 
     
+    void loadDataset();
+    void selectNodes();
+    void runDijkstra();
+    void runAStar();
+    void compareAlgorithms();
+    void displayPath(const PathResult& result, const std::string& algorithmName);
+    void printHeader() const;
+    void printSeparator() const;
 };
 
 #endif
