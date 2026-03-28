@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="338f94e2-0a86-4d5b-8a93-677575055ee4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="338f94e2-0a86-4d5b-8a93-677575055ee4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774731997568</updated>
-      <workItem from="1774731999301" duration="880000" />
+      <workItem from="1774731999301" duration="1837000" />
     </task>
     <servers />
   </component>
