@@ -1,4 +1,3 @@
-
 #include "AStar.h"
 #include <queue>
 #include <limits>
